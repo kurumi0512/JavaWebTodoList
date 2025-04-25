@@ -13,7 +13,7 @@ import model.dto.TodoDTO;
 import service.TodoListService;
 import service.TodoListServiceImpl;
 
-@WebServlet("/todolist/*")
+@WebServlet("/todolist/*") // 為了匹配下面update和delete(看使用者是打什麼,如果亂打就會跳path error)
 public class TodoListServlet extends HttpServlet {
 
 	private TodoListService service = new TodoListServiceImpl();
