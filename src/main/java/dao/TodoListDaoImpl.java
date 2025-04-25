@@ -9,6 +9,7 @@ import java.util.List;
 
 import model.entity.Todo;
 
+//處理資料庫的邏輯
 public class TodoListDaoImpl extends BaseDao implements TodoListDao {
 
 	@Override
