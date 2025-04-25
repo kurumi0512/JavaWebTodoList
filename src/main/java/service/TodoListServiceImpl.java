@@ -8,7 +8,7 @@ import model.dto.TodoDTO;
 import model.entity.Todo;
 
 public class TodoListServiceImpl implements TodoListService {
-
+	// 因為要調用資料庫的東西所以還是要NEW一個dao的實作
 	private TodoListDao dao = new TodoListDaoImpl();
 
 	/*
@@ -21,11 +21,12 @@ public class TodoListServiceImpl implements TodoListService {
 
 	@Override
 	public List<TodoDTO> findAllTodos() {
-		return dao.findAllTodos().stream().map(this::transferToDTO) // 把每個元素轉換
+		return dao.findAllTodos().stream().map(this::transferToDTO) // 把每個元素轉換成dto
 				// .map(todo -> transferToDTO(todo))
 				.toList();
 	}
 
+	// 轉換成dTO
 	@Override
 	public TodoDTO getTodo(Integer id) {
 		return transferToDTO(dao.getTodo(id));
